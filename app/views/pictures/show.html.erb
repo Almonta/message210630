@@ -1,0 +1,9 @@
+<h1><span class="label label-primary">投稿詳細確認</span></h1>
+<p>内容: <%= @picture.content %></p>
+<% if @picture.image.url %>
+<p>
+<strong>Image:</strong><br>
+<%= image_tag @picture.image.url %>
+</p>
+<% end %>
+<%= link_to "Home", pictures_path %>

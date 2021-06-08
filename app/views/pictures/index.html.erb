@@ -1,0 +1,20 @@
+<h1><span class="label label-primary">Home</span></h1>
+<hr>
+<div class="container">
+  <div class="row">
+    <% @pictures.each do |picture| %>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">投稿者：<%= picture.user.name %></p>
+            <p class="card-text">内容：<%= picture.content %></p>
+            <p class="card-img-bottom"><%= image_tag(picture.image.url) %></p> 
+            <span class="card-link"><%= link_to '投稿を確認する', picture_path(picture.id) %></span>
+            <span class="card-link"><%= link_to "投稿を編集する", edit_picture_path(picture.id), data: { confirm: '本当に編集していいですか？'} %></span>
+            <span class="card-link"><%= link_to '投稿を削除する', picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？'} %></span>
+          </div>
+        </div>
+      </div>      
+    <% end %>
+  </div>
+</div>

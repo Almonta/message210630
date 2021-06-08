@@ -1,0 +1,14 @@
+<header>
+<h3 class="confirm">以下の内容で、投稿する</h3>
+</header>
+<%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p>本文:<%= @picture.content %></p>
+  <p>
+  <strong>Image:</strong><br>
+  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+  <%= form.hidden_field :image_cache %>
+  </p>
+  <%= form.submit "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
