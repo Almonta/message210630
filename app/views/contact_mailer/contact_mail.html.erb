@@ -1,0 +1,7 @@
+
+<h4>お問い合わせ内容の確認</h4>
+<p>content: <%= @picture.content %></p>
+
+<p>投稿者：<%= @picture.user.name %></p>
+<p>内容：<%= @picture.content %></p>
+<p><%= image_tag(@picture.image.url) %></p> 
