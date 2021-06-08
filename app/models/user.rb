@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :email, presence: true
   has_secure_password
   has_many :pictures
+  has_many :favorites, dependent: :destroy
 end
