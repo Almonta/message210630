@@ -1,0 +1,13 @@
+<h2>プロフィール画像を編集</h2>
+
+<%= form_with(model: @user, local: true) do |form| %>
+
+  <div class="field">
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+</div>
+
+  
+  <%= form.submit %>
+
+<% end %>

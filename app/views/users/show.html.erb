@@ -1,2 +1,7 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+
+<p><%= @user.image %></p>
+<p><%#= image_tag(@user.image.url) %></p> 
+
+<p><%= link_to "プロフィール画像を編集する", edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？'} %></p>

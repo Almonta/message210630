@@ -9,5 +9,6 @@ class FavoritesController < ApplicationController
   end
   def index
     @favorite = Favorite.new
+    # @favorite = current_user.favorites.build(favorite_params)
   end
 end
