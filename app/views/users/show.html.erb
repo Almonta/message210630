@@ -1,7 +1,21 @@
+
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
 
-<p><%= @user.image %></p>
-<p><%#= image_tag(@user.image.url) %></p> 
+<p>Image: <%= image_tag(@user.image.url) unless @user.image.url.nil?%></p>
 
-<p><%= link_to "プロフィール画像を編集する", edit_user_path(@user.id), data: { confirm: '本当に編集していいですか？'} %></p>
+<%
+=begin %>
+
+<% if (@user.image.url) %>
+  <p>Image: <%= image_tag(@user.image.url) %></p>
+<% else %>
+  <%= form.file_field :image %>
+  <%= form.submit "プロフィール画像を更新する" %>
+<% end %>
+
+<%
+=end %>
+<%# if user_path(current_user.id) == user_path(params[:id]) %>
+  <%= link_to 'プロフィール画像を編集する', edit_user_path(@user) %>
+<%# end %>
