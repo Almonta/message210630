@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # @user.authenticate(user_params)
       redirect_to user_path(@user.id)
     else
       render :new
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      redirect_to user_path(current_user.id) , notice: '投稿成功'
+      redirect_to user_path(current_user.id) , notice: 'プロフィール画像の編集ができました'
     else
       render :edit
     end
