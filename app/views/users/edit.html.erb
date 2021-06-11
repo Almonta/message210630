@@ -3,7 +3,6 @@
 <%= form_with(model: @user, local: true ,url: choose_new_or_edit ) do |form| %>
 <h1><%= @user.name %>のページ</h1>
 
-
 <div class="field">
   <%= form.label :image %>
   <%= image_tag(@user.image.url) if @user.image.present? %>

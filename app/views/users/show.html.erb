@@ -4,18 +4,6 @@
 
 <p>Image: <%= image_tag(@user.image.url) unless @user.image.url.nil?%></p>
 
-<%
-=begin %>
-
-<% if (@user.image.url) %>
-  <p>Image: <%= image_tag(@user.image.url) %></p>
-<% else %>
-  <%= form.file_field :image %>
-  <%= form.submit "プロフィール画像を更新する" %>
-<% end %>
-
-<%
-=end %>
 <% if current_user.id == params[:id].to_i %>
   <%= link_to 'プロフィール画像を編集する', edit_user_path(@user) %>
 <% end %>
