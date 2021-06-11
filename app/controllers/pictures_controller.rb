@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @pictures = Picture.all.order(created_at: :desc)
@@ -50,5 +51,10 @@ class PicturesController < ApplicationController
   end
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+  def move_to_index
+    unless current_user.name == @picture.user.name
+      redirect_to pictures_path
+    end
   end
 end

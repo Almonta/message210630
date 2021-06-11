@@ -16,6 +16,6 @@
 
 <%
 =end %>
-<%# if user_path(current_user.id) == user_path(params[:id]) %>
+<% if current_user.id == params[:id].to_i %>
   <%= link_to 'プロフィール画像を編集する', edit_user_path(@user) %>
-<%# end %>
+<% end %>

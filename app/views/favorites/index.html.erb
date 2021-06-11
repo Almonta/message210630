@@ -1,7 +1,9 @@
 <h1>お気に入り一覧</h1>
 
+<p>投稿者：<%= @favorite.picture.user.name %></p>
+
 <%
-=begin $>
+=begin %>
 
 <% @favorites.each do |favorite| %>
   <div class="col">
