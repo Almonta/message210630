@@ -1,21 +1,13 @@
 <h1>お気に入り一覧</h1>
 
-<p>投稿者：<%= @favorite.picture.user.name %></p>
-
-<%
-=begin %>
-
 <% @favorites.each do |favorite| %>
   <div class="col">
     <div class="card">
       <div class="card-body">
         <p class="card-title">投稿者：<%= favorite.user.name %></p>
-        <p class="card-text">内容：<%= favorite.picture.content %></p>
-        <p class="card-img-bottom"><%= favorite.picture.image_tag(picture.image.url) %></p> 
+        <p class="card-text">内容：<%= favorite.content %></p>
+        <p class="card-img-bottom"><%= image_tag(favorite.image.url) %></p> 
       </div>
     </div>
   </div>      
 <% end %>
-
-<%
-=end %>
