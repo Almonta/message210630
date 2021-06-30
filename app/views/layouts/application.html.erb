@@ -42,6 +42,7 @@
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>
     <% end %>
+    <li><%= link_to 'ユーザー一覧', users_path if logged_in? %></li>
     <%= yield %>
   </body>
 </html>
